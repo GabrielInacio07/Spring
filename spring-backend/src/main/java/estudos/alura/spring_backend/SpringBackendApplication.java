@@ -1,5 +1,6 @@
 package estudos.alura.spring_backend;
 
+import estudos.alura.spring_backend.service.ConsumerAPI;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +14,16 @@ public class SpringBackendApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello Word!");
-        System.out.println("SpringBoot -> Backend");
+
+        ConsumerAPI consumerapi = new ConsumerAPI();
+
+        var json = consumerapi.obterDados("https://www.omdbapi.com/?t=Sinners&apikey=d7b5168c");
+        System.out.println(json);
+
+        json = consumerapi.obterDados("https://viacep.com.br/ws/SP/Rosana/Rua+Encantado/json");
+        System.out.println(json);
+
+
     }
+
 }
