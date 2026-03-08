@@ -1,9 +1,5 @@
 package estudos.alura.spring_backend.model;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import estudos.alura.spring_backend.service.FetchDados;
-
 public class Tarefa {
 
     private String descricao;
