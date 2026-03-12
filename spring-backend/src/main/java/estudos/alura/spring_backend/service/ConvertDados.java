@@ -2,7 +2,6 @@ package estudos.alura.spring_backend.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import estudos.alura.spring_backend.model.Serie;
 
 public class ConvertDados implements FetchDados{
 

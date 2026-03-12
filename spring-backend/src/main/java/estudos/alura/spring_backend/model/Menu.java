@@ -5,8 +5,10 @@ import estudos.alura.spring_backend.service.ConsumerAPI;
 import estudos.alura.spring_backend.service.ConvertDados;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Menu {
 
@@ -79,6 +81,12 @@ public class Menu {
     }
 
     private void listarSerieBuscadas() {
-        listaSeries.forEach(System.out::println);
+        List<SerieObject> series = listaSeries.stream()
+                .map(dado -> new SerieObject(dado))
+                .collect(Collectors.toList());
+
+        series.stream()
+                .sorted(Comparator.comparing(SerieObject::getGenero))
+                .forEach(System.out::println);
     }
 }
